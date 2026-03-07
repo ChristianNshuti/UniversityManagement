@@ -29,4 +29,16 @@ public class InstructorDAO {
         Instructor instructor = session.get(Instructor.class,id);
         return instructor;
     }
+
+    public void deleteInstructor(Long id) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction tx = session.beginTransaction();
+        Instructor instructor = session.get(Instructor.class,id);
+        if (instructor != null) {
+            session.remove(instructor);
+        }
+        tx.commit();
+        session.close();
+    }
+
 }
