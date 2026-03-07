@@ -18,10 +18,10 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <mapping class="entity.Person" />
-        <mapping class="entity.Student"/>
-        <mapping class="entity.Instructor"/>
-        <mapping class="entity.Course"/>
-        <mapping class="entity.Enrollment"/>
+        <mapping class="model.Person" />
+        <mapping class="model.Student"/>
+        <mapping class="model.Instructor"/>
+        <mapping class="model.Course"/>
+        <mapping class="model.Enrollment"/>
     </session-factory>
 </hibernate-configuration>
