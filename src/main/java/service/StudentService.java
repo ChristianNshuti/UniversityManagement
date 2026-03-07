@@ -9,8 +9,7 @@ public class StudentService {
 
     private final StudentDAO studentDAO = new StudentDAO();
 
-    public void saveStudent(String name,String email,String level) {
-        Student student = new Student(name,email,level);
+    public void saveStudent(Student student) {
         studentDAO.saveStudent(student);
     }
 
