@@ -47,7 +47,7 @@ public class Course {
         this.title = title;
     }
 
-    public void setInstructorName(Instructor instructor) {
+    public void setInstructor(Instructor instructor) {
         this.instructor = instructor;
     }
 }
