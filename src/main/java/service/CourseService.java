@@ -10,8 +10,7 @@ public class CourseService {
 
     private final CourseDAO courseDAO = new CourseDAO();
 
-    public void saveCourse(String title,Instructor instructor) {
-        Course course = new Course(title,instructor);
+    public void saveCourse(Course course) {
         courseDAO.saveCourse(course);
     }
 
