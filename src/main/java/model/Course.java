@@ -35,7 +35,7 @@ public class Course {
         return title;
     }
 
-    public Instructor getInstructorName() {
+    public Instructor getInstructor() {
         return instructor;
     }
 
