@@ -20,4 +20,8 @@ public class InstructorService {
     public Instructor getInstructorById(Long id) {
         return instructorDAO.getInstructorById(id);
     }
+
+    public void deleteInstructor(Long id) {
+        instructorDAO.deleteInstructor(id);
+    }
 }
