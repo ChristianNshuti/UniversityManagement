@@ -35,7 +35,7 @@ public class StudentDAO {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
 
-        List<Student> students = session.createQuery("from Student", Student.class);
+        List<Student> students = session.createQuery("from Student", Student.class).list();
 
         session.close();
         return students;
