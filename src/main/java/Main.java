@@ -33,13 +33,16 @@ public class Main {
         Enrollment enrollment = new Enrollment(student,course);
         enrollmentService.saveEnrollment(enrollment);
         List<Student> allStudents = studentService.getAllStudents();
+        System.out.println("All students: ");
         allStudents.forEach(s -> System.out.println(s.getId() + " " + s.getName() +
                 " " + s.getEmail() + " " + s.getLevel()));
         List<Course> allCourses = courseService.getAllCourses();
+        System.out.println("All courses: ");
         allCourses.forEach(c -> System.out.println(c.getId() + " " + c.getTitle() + " "
-        + c.getInstructorName() + " " + c.getEnrollments()));
+        + c.getInstructor().getName() + " " + c.getEnrollments().size()));
         List<Enrollment> allEnrollments = enrollmentService.getAllEnrollments();
-        allEnrollments.forEach(e -> System.out.println(e.getId() + " " + e.getStudent() + " "
-        + e.getCourse()));
+        System.out.println("All enrollments: ");
+        allEnrollments.forEach(e -> System.out.println(e.getId() + " " + e.getStudent().getName() + " "
+        + e.getCourse().getTitle()));
     }
 }
