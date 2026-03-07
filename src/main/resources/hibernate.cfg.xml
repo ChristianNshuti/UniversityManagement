@@ -12,7 +12,7 @@
             jdbc:postgresql://localhost:5432/university_db
         </property>
         <property name="hibernate.connection.username">enterprisedb</property>
-        <property name="hibernate.connection.password">postgres</property>
+        <property name="hibernate.connection.password">ncmmcn</property>
 
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hibernate.show_sql">true</property>
