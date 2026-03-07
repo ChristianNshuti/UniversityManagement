@@ -34,7 +34,12 @@ public class CourseDAO {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
 
-        List<Course> courses = session.createQuery("from Course",Course.class).list();
+        List<Course> courses = session.createQuery(
+                "select distinct c from Course c " +
+                        "join fetch c.instructor " +
+                        "left join fetch c.enrollments",
+                Course.class
+        ).list();
 
         session.close();
         return courses;
