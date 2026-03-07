@@ -15,13 +15,11 @@ public class StudentService {
     }
 
     public Student getStudentById(Long id) {
-        Student student = studentDAO.getStudentById(id);
-        return student;
+        return studentDAO.getStudentById(id);
     }
 
     public List<Student> getAllStudents() {
-        List<Student> students = studentDAO.getAllStudents();
-        return students;
+        return studentDAO.getAllStudents();
     }
 
     public void deleteStudent(Long id) {
