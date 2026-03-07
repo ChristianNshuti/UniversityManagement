@@ -24,7 +24,7 @@ public class InstructorDAO {
         return instructors;
     }
 
-    public Instructor instructor(Long id) {
+    public Instructor getInstructorById(Long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Instructor instructor = session.get(Instructor.class,id);
         return instructor;
