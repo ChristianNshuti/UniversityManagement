@@ -34,7 +34,7 @@ public class EnrollmentDAO {
 
     public void deleteEnrollment(Long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
+        Transaction tx = session.beginTransaction();
         Enrollment enrollment = session.get(Enrollment.class,id);
         if(enrollment != null) {
             session.remove(enrollment);
