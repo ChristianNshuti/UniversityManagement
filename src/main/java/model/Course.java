@@ -13,16 +13,18 @@ public class Course {
 
     private String title;
 
-    private String instructorName;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "instructor_id")
+    private Instructor instructor;
 
     @OneToMany(mappedBy = "course", fetch = FetchType.LAZY)
     private List<Enrollment> enrollments = new ArrayList<>();
 
     public Course() {}
 
-    public Course(String title,String instructorName) {
+    public Course(String title, Instructor instructor) {
         this.title = title;
-        this.instructorName = instructorName;
+        this.instructor = instructor;
     }
 
     public Long getId() {
