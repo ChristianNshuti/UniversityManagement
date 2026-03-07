@@ -22,12 +22,13 @@ public class Main {
         String instructorEmail = "bosco@gmail.com";
         String department = "Math";
         Student student = new Student(studentName,studentEmail,level);
-        studentService.saveStudent(studentName,studentEmail,level);
+        studentService.saveStudent(student);
         Instructor instructor = new Instructor(instructorName,instructorEmail,department);
         String title = "Mathematics";
-        courseService.saveCourse(title,instructor);
         Course course = new Course(title,instructor);
-        enrollmentService.saveEnrollment(student,course);
+        courseService.saveCourse(course);
+        Enrollment enrollment = new Enrollment(student,course);
+        enrollmentService.saveEnrollment(enrollment);
         List<Student> allStudents = studentService.getAllStudents();
         allStudents.forEach(s -> System.out.println(s.getId() + " " + s.getName() +
                 " " + s.getEmail() + " " + s.getLevel()));
