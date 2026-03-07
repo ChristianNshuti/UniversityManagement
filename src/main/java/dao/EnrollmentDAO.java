@@ -20,7 +20,13 @@ public class EnrollmentDAO {
 
     public List<Enrollment> getAllEnrollments() {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        List<Enrollment> enrollments = session.createQuery("from Enrollment",Enrollment.class).list();
+        List<Enrollment> enrollments = session.createQuery(
+                "select e from Enrollment e " +
+                        "join fetch e.student " +
+                        "join fetch e.course",
+                Enrollment.class
+        ).list();
+
         session.close();
         return enrollments;
     }
