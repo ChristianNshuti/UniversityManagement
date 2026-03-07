@@ -5,6 +5,7 @@ import model.Student;
 import service.CourseService;
 import service.StudentService;
 import service.EnrollmentService;
+import service.InstructorService;
 import model.Instructor;
 
 import java.util.*;
@@ -14,6 +15,7 @@ public class Main {
         CourseService courseService = new CourseService();
         StudentService studentService = new StudentService();
         EnrollmentService enrollmentService = new EnrollmentService();
+        InstructorService instructorService = new InstructorService();
 
         String studentName = "christian";
         String studentEmail = "chrisnshuti943@gmail.com";
@@ -24,6 +26,7 @@ public class Main {
         Student student = new Student(studentName,studentEmail,level);
         studentService.saveStudent(student);
         Instructor instructor = new Instructor(instructorName,instructorEmail,department);
+        instructorService.saveInstructor(instructor);
         String title = "Mathematics";
         Course course = new Course(title,instructor);
         courseService.saveCourse(course);
