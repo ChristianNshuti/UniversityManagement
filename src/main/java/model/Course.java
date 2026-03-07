@@ -35,8 +35,8 @@ public class Course {
         return title;
     }
 
-    public String getInstructorName() {
-        return instructorName;
+    public Instructor getInstructorName() {
+        return instructor;
     }
 
     public List<Enrollment> getEnrollments() {
@@ -47,8 +47,8 @@ public class Course {
         this.title = title;
     }
 
-    public void setInstructorName(String instructorName) {
-        this.instructorName = instructorName;
+    public void setInstructorName(Instructor instructor) {
+        this.instructor = instructor;
     }
 }
 
