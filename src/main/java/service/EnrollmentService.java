@@ -11,8 +11,7 @@ public class EnrollmentService {
 
     private final EnrollmentDAO enrollmentDAO = new EnrollmentDAO();
 
-    public void saveEnrollment(Student student,Course course) {
-        Enrollment enrollment = new Enrollment(student,course);
+    public void saveEnrollment(Enrollment enrollment) {
         enrollmentDAO.saveEnrollment(enrollment);
     }
 
